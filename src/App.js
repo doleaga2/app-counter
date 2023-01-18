@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+// useState is a variable name we want in react
+import React, { useState } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+  let [ counter, setCounter ] = useState(1);
+  let increaseCount = () => setCounter(counter + 1);
+  let decreaseCount = () => setCounter(counter - 1);
+  // window.changeCounter = setCounter
+    return (<div>
+       <h1>{counter}</h1>
+      <button onClick={increaseCount}>Add</button>
+      <button onClick={decreaseCount}>Subtract</button>
+      </div>)
 }
 
 export default App;
